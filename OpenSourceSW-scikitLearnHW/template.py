@@ -6,6 +6,7 @@ import numpy as np										## numpy
 import pandas as pd										## pandas
 from sklearn.model_selection import train_test_split	## 데이터 분할
 from sklearn.tree import DecisionTreeClassifier			## 의사결정나무
+from sklearn.metrics import accuracy_score, precision_score, recall_score            ## 정확도, 정밀도, 재현율
 from sklearn.ensemble import RandomForestClassifier		## 랜덤포레스트
 from sklearn.svm import SVC								## 서포트 벡터 머신
 
@@ -23,12 +24,15 @@ def dataset_stat(dataset_df):
 def split_dataset(dataset_df, testset_size):
 	print("split_dataset")
 	#To-Do: Implement this function
-	data_train, data_test, label_train, label_test = train_test_split(dataset_df.drop('target', axis=1), dataset_df.target, test_size=testset_size)
-	return data_train, data_test, label_train, label_test
+	x_train, x_test, y_train, y_test = train_test_split(dataset_df.drop('target', axis=1), dataset_df.target, test_size=testset_size)
+	return x_train, x_test, y_train, y_test
 
 def decision_tree_train_test(x_train, x_test, y_train, y_test):
 	print("decision_tree_train_test")
 	#To-Do: Implement this function
+	dt_cls = DecisionTreeClassifier()
+	dt_cls.fit(x_train, y_train)
+	return accuracy_score(y_test, dt_cls.predict(x_test))*100, precision_score(y_test, dt_cls.predict(x_test))*100, recall_score(y_test, dt_cls.predict(x_test))*100
 
 def random_forest_train_test(x_train, x_test, y_train, y_test):
 	print("random_forest_train_test")
