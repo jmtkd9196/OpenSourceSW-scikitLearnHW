@@ -23,6 +23,8 @@ def dataset_stat(dataset_df):
 def split_dataset(dataset_df, testset_size):
 	print("split_dataset")
 	#To-Do: Implement this function
+	data_train, data_test, label_train, label_test = train_test_split(dataset_df, dataset_df.target, test_size=testset_size)
+	return data_train, data_test, label_train, label_test
 
 def decision_tree_train_test(x_train, x_test, y_train, y_test):
 	print("decision_tree_train_test")
