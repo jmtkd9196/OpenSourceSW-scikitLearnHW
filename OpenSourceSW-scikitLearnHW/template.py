@@ -12,6 +12,8 @@ from sklearn.ensemble import RandomForestClassifier		## 랜덤포레스트
 def load_dataset(dataset_path):
 	print("load_dataset")
 	#To-Do: Implement this function
+	dataset_df = pd.read_csv(dataset_path)
+	return dataset_df
 
 def dataset_stat(dataset_df):
 	print("dataset_stat")
