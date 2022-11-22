@@ -37,6 +37,9 @@ def decision_tree_train_test(x_train, x_test, y_train, y_test):
 def random_forest_train_test(x_train, x_test, y_train, y_test):
 	print("random_forest_train_test")
 	#To-Do: Implement this function
+	rf_cls = RandomForestClassifier()
+	rf_cls.fit(x_train, y_train)
+	return accuracy_score(y_test, rf_cls.predict(x_test))*100, precision_score(y_test, rf_cls.predict(x_test))*100, recall_score(y_test, rf_cls.predict(x_test))*100
 
 def svm_train_test(x_train, x_test, y_train, y_test):
 	print("svm_train_test")
