@@ -18,6 +18,7 @@ def load_dataset(dataset_path):
 def dataset_stat(dataset_df):
 	print("dataset_stat")
 	#To-Do: Implement this function
+	return dataset_df.shape[1], dataset_df.groupby("target").size()[0], dataset_df.groupby("target").size()[1]
 
 def split_dataset(dataset_df, testset_size):
 	print("split_dataset")
