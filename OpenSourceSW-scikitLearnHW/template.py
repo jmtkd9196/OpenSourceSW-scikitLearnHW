@@ -5,9 +5,9 @@ import sys
 import numpy as np										## numpy
 import pandas as pd										## pandas
 from sklearn.model_selection import train_test_split	## 데이터 분할
-from sklearn import svm									## 서포트 벡터 머신
-from sklearn import tree								## 의사결정나무
+from sklearn.tree import DecisionTreeClassifier			## 의사결정나무
 from sklearn.ensemble import RandomForestClassifier		## 랜덤포레스트
+from sklearn.svm import SVC								## 서포트 벡터 머신
 
 def load_dataset(dataset_path):
 	print("load_dataset")
