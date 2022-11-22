@@ -2,23 +2,35 @@
 #
 
 import sys
+import numpy as np										## numpy
+import pandas as pd										## pandas
+from sklearn.model_selection import train_test_split	## 데이터 분할
+from sklearn import svm									## 서포트 벡터 머신
+from sklearn import tree								## 의사결정나무
+from sklearn.ensemble import RandomForestClassifier		## 랜덤포레스트
 
 def load_dataset(dataset_path):
+	print("load_dataset")
 	#To-Do: Implement this function
 
-def dataset_stat(dataset_df):	
+def dataset_stat(dataset_df):
+	print("dataset_stat")
 	#To-Do: Implement this function
 
 def split_dataset(dataset_df, testset_size):
+	print("split_dataset")
 	#To-Do: Implement this function
 
 def decision_tree_train_test(x_train, x_test, y_train, y_test):
+	print("decision_tree_train_test")
 	#To-Do: Implement this function
 
 def random_forest_train_test(x_train, x_test, y_train, y_test):
+	print("random_forest_train_test")
 	#To-Do: Implement this function
 
 def svm_train_test(x_train, x_test, y_train, y_test):
+	print("svm_train_test")
 	#To-Do: Implement this function
 
 def print_performances(acc, prec, recall):
